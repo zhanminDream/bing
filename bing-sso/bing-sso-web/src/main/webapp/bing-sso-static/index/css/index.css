@@ -1,0 +1,80 @@
+/**
+ * -------------------index css------------------->>>>>
+ */
+
+body {
+	overflow: scroll;
+	overflow: hidden;
+}
+
+.canvas_div, .main, .main_top, .main_center, .main_bottom {
+	width: 100%;
+	padding: 0px;
+}
+
+.canvas_div {
+	height: 100%;
+}
+
+.canvas_div, .main {
+	height: 100%;
+	position: absolute;
+}
+
+.main .main_top {
+	height: 28%;
+}
+
+.main_top .title-left, .title-center, .title-right {
+	height: 100%;
+}
+
+.main_top .title-center .bing-logo {
+	width: 48%;
+	height: 42%;
+	margin-top: 28%;
+	margin-left: 26%;
+}
+
+.main_top .title-center .bing-logo .bing-logo-img {
+	width: 40%;
+	height: 40%;
+}
+
+.main .main_center {
+	height: 42%;
+}
+
+.main .main_center .center_l, .center_c, .center_r, .center_c .lr_tab {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.lr_tab {
+	width: 80%;
+}
+
+.lr_tab .lr_tab_t, .lr_tab_c {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.lr_tab .lr_tab_c {
+	height: 100%;
+}
+
+.lr_tab_c .login_div, .register_div {
+	width: 100%;
+	height: 100%;
+	margin-top: 6%;
+}
+
+.login_div .login_form, .register_div .register_form {
+	height: 100%;
+}
+
+.main .main_bottom {
+	height: 30%;
+}
