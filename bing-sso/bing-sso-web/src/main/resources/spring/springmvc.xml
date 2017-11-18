@@ -7,22 +7,29 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- 只扫描controller层 -->
 	<context:component-scan base-package="com.bing.sso.controller" />
+	
+	<!-- 注解驱动 -->
 	<mvc:annotation-driven />
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
-		<property name="suffix" value=".jsp" />
+	
+	<!-- 视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/bing-sso-views" />
+		<property name="suffix" value=".html" />
 	</bean>
-	<!-- 静态资源映射 -->
-	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
-	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	
+	<!-- 不拦截静态资源 -->
+    <mvc:resources location="/bing-sso-static/" mapping="/bing-sso-static/**"/> 
+    <mvc:resources location="/plugins/" mapping="/plugins/**"/> 
+    <mvc:resources location="/WEB-INF/" mapping="/WEB-INF/**"/>
+	
 	<!-- 定义文件上传解析器 -->
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 设定默认编码 -->
 		<property name="defaultEncoding" value="UTF-8"></property>
 		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
 		<property name="maxUploadSize" value="5242880"></property>
 	</bean>
+	
 </beans>

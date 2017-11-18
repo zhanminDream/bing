@@ -9,13 +9,22 @@ import com.bing.sso.service.test.TestUserService;
 
 @Controller
 public class TestUserController {
+	
 	@Autowired
 	private TestUserService testUserService;
+	
 	@Autowired
 	private TestUserFindService testUserFindService;
+	
 	@RequestMapping("/saveUser")
 	public void saveUser(){
 		//testUserFindService.findUserById();
 		testUserService.saveUser();
 	}
+	
+	@RequestMapping("/")
+	public String index() {
+		return "/index/index";
+	}
+	
 }
